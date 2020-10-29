@@ -1,28 +1,25 @@
-// fib sequence
-// start with 1, second is 1
-// make an array of the sequence
-// sequence -- 2 previous numbers makes up the next one
+<script type = "text/javascript"> 
+function fibonacci(num) 
+	{ 
+		if(num==1) 
+			return 0; 
+		if(num==2) 
+			return 1; 
+		var num1=0; 
+		var num2=1; 
+		var sum; 
+		var i=2; 
+		while (i<num) 
+		{ 
+			sum=num1+num2; 
+			num1=num2; 
+			num2=sum; 
+			i+=1; 
+		} 
+		return num2; 
+	} 
 
-function fibIt(indexOfNumber) {
-  var fibStart = [1, 1];
+document.write("Fibonacci(5): "+fibonacci(5)+"<br>"); 
+document.write("Fibonacci(8): "+fibonacci(8)+"<br>"); 
+</script> 
 
-  for(var i = 2; i <= indexOfNumber; i++){
-    fibStart.push(fibStart[i - 2] + fibStart[i - 1]);
-  }
-
-  return fibStart[indexOfNumber];
-}
-
-// recursive without an array
-
-function fibItRec(indexOfNumber) {
-  var number = 0;
-
-  if (indexOfNumber < 2) {
-    number = 1;
-  } else {
-    return fibItRec(indexOfNumber - 2) + fibItRec(indexOfNumber - 1);
-  }
-
-  return number;
-}
